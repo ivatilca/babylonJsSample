@@ -1,0 +1,28 @@
+{
+  "name": "hellovr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack serve --config webpack.dev.js --progress --profile --content-base src/",
+    "start_broken": "/* NOTE:  as of 2020/12/30 there is an incompatibility with webpack-cli and webpack-dev-server */  webpack-dev-server --open --config webpack.dev.js --host localhost",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "babylonjs": "^5.4.0",
+    "babylonjs-gui": "^5.4.0",
+    "babylonjs-loaders": "^5.4.0",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
+    "webpack-merge": "^5.8.0"
+  }
+}
