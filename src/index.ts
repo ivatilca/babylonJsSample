@@ -20,7 +20,20 @@ if (!engine) throw "Unable to create an engine!";
 const createScene = async function () {
     const scene = new BABYLON.Scene(engine);
     const env = await environment.setup(scene, theCanvas);
+ 
+  
+    (await env).dragon.fadeIn(true);
+
+    const xr = await scene.createDefaultXRExperienceAsync({
+        uiOptions: {
+            sessionMode: "immersive-ar",
+        },
+    });
     
+    xr.baseExperience.featuresManager.enableFeature(BABYLON.WebXRBackgroundRemover, 'latest', {
+        backgroundMeshes: [env.skybox, env.ground]
+    });
+ 
     return scene;
 };
 
