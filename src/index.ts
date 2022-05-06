@@ -31,7 +31,7 @@ const createScene = async function () {
     });
     
     xr.baseExperience.featuresManager.enableFeature(BABYLON.WebXRBackgroundRemover, 'latest', {
-        backgroundMeshes: [env.skybox, env.ground]
+        backgroundMeshes: [env.skybox]
     });
  
     return scene;
