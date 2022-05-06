@@ -32,9 +32,9 @@ export async function setup(scene: BABYLON.Scene, canvas: HTMLCanvasElement) {
 }
 
 export async function importMeshes(scene: BABYLON.Scene) {
-    const modelMeshes = await BABYLON.SceneLoader.ImportMeshAsync("", "assets/", "Dino.glb", scene);
-    const model = modelMeshes.meshes[0];
-    helper.scaleFromPivot(model, new BABYLON.Vector3(-0.2, 0, 0.2), 1000, 1000, 1000);
+    const modelMeshes = await BABYLON.SceneLoader.ImportMeshAsync("", "assets/", "3xm.glb", scene);
+    const model = modelMeshes.meshes[1];
+    helper.scaleFromPivot(model, new BABYLON.Vector3(-0.2, 0, 0.2), 10, 10, 10);
 
     model.position.y += 4;
 
