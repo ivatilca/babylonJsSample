@@ -4,10 +4,10 @@ import * as helper from "./helper";
 export async function setup(scene: BABYLON.Scene, canvas: HTMLCanvasElement) {
     const camera = new BABYLON.ArcRotateCamera(
         "camera",
-        Math.PI,
+        -1.2,
         Math.PI/2.2,
-        460,
-        new BABYLON.Vector3(100, 0, 0),
+        23,
+        new BABYLON.Vector3(0, 0, 0),
         scene
     );
     camera.attachControl(canvas, true);
@@ -33,8 +33,8 @@ export async function setup(scene: BABYLON.Scene, canvas: HTMLCanvasElement) {
 
 export async function importMeshes(scene: BABYLON.Scene) {
     const modelMeshes = await BABYLON.SceneLoader.ImportMeshAsync("", "assets/", "3xm.glb", scene);
-    const model = modelMeshes.meshes[1];
-    helper.scaleFromPivot(model, new BABYLON.Vector3(-0.2, 0, 0.2), 10, 10, 10);
+    const model = modelMeshes.meshes[5];
+    helper.scaleFromPivot(model, new BABYLON.Vector3(0, 90, 0), 0, 0, 0);
 
     model.position.y += 4;
 
@@ -53,7 +53,7 @@ export async function importMeshes(scene: BABYLON.Scene) {
 }
 
 export function createBackground(scene: BABYLON.Scene, meshToRender: BABYLON.AbstractMesh) {
-    const skybox = BABYLON.Mesh.CreateBox("BackgroundSkybox", 1000, scene, undefined, BABYLON.Mesh.BACKSIDE);
+    const skybox = BABYLON.Mesh.CreateBox("BackgroundSkybox", 100, scene, undefined, BABYLON.Mesh.BACKSIDE);
     skybox.scaling = new BABYLON.Vector3(skybox.scaling.x * 1.2, skybox.scaling.y * 0.5, skybox.scaling.z * 1.2);
     const skyboxMaterial = new BABYLON.BackgroundMaterial("skyboxMaterial", scene);
     var files = [
