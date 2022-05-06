@@ -22,7 +22,7 @@ const createScene = async function () {
     const env = await environment.setup(scene, theCanvas);
  
   
-    (await env).dragon.fadeIn(true);
+    (await env).model.fadeIn(true);
 
     const xr = await scene.createDefaultXRExperienceAsync({
         uiOptions: {
